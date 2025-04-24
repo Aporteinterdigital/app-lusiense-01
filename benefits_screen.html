@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup - Clube de Benefícios</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .mockup {
+            max-width: 360px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            height: 640px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #1E88E5;
+            color: white;
+            padding: 16px;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .points-card {
+            margin: 16px;
+            padding: 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #D4AF37, #D4AF37 70%, #E5C158);
+            color: black;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .points-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .points-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            background-color: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+        .points-info {
+            flex: 1;
+        }
+        .points-label {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .points-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .earn-button {
+            background-color: black;
+            color: #D4AF37;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .earn-button .material-icons {
+            font-size: 16px;
+            margin-right: 4px;
+        }
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 35%;
+            background-color: black;
+        }
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 16px 16px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin: 0 16px;
+        }
+        .tab {
+            flex: 1;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #777;
+            border-bottom: 2px solid transparent;
+        }
+        .tab.active {
+            color: #1E88E5;
+            border-bottom-color: #1E88E5;
+        }
+        .benefit-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .benefit-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: rgba(30, 136, 229, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        .benefit-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        .benefit-description {
+            font-size: 14px;
+            color: #777;
+            margin: 0 0 12px;
+        }
+        .benefit-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .benefit-validity {
+            font-size: 12px;
+            color: #777;
+        }
+        .use-button {
+            background-color: #D4AF37;
+            color: black;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .use-button .material-icons {
+            font-size: 16px;
+            margin-right: 4px;
+        }
+        .pix-section {
+            margin-top: 16px;
+            padding: 16px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+        }
+        .pix-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .pix-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .pix-title .material-icons {
+            margin-right: 8px;
+            color: #1E88E5;
+        }
+        .pix-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1E88E5;
+        }
+        .pix-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+        .pix-button {
+            flex: 1;
+            margin: 0 4px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .pix-button .material-icons {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #1E88E5;
+        }
+        .pix-button-text {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .bottom-nav {
+            display: flex;
+            border-top: 1px solid #eee;
+            background-color: white;
+        }
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            color: #777;
+        }
+        .nav-item.active {
+            color: #D4AF37;
+        }
+        .nav-item p {
+            margin: 5px 0 0;
+            font-size: 12px;
+        }
+        .material-icons {
+            font-size: 24px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="mockup">
+        <div class="header">
+            <h1>Clube de Benefícios</h1>
+        </div>
+        
+        <div class="points-card">
+            <div class="points-header">
+                <div class="points-icon">
+                    <span class="material-icons" style="font-size: 28px;">card_giftcard</span>
+                </div>
+                <div class="points-info">
+                    <p class="points-label">Seus Pontos</p>
+                    <p class="points-value">350</p>
+                </div>
+                <button class="earn-button">
+                    <span class="material-icons">add</span>
+                    Ganhar Mais
+                </button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-labels">
+                <span>Nível Prata</span>
+                <span>650 pontos para Nível Ouro</span>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active">Benefícios</div>
+            <div class="tab">Meus PIX</div>
+            <div class="tab">Dados Bancários</div>
+        </div>
+        
+        <div class="content">
+            <!-- Seção de Benefícios -->
+            <div class="benefit-card">
+                <div class="benefit-header">
+                    <div class="benefit-icon">
+                        <span class="material-icons" style="color: #1E88E5;">restaurant</span>
+                    </div>
+                    <h3 class="benefit-title">10% de desconto em restaurantes locais</h3>
+                </div>
+                <p class="benefit-description">Apresente o aplicativo nos restaurantes parceiros e ganhe 10% de desconto em qualquer refeição.</p>
+                <div class="benefit-footer">
+                    <span class="benefit-validity">Válido até: 31/12/2025</span>
+                    <button class="use-button">
+                        <span class="material-icons">redeem</span>
+                        Usar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-header">
+                    <div class="benefit-icon">
+                        <span class="material-icons" style="color: #1E88E5;">shopping_cart</span>
+                    </div>
+                    <h3 class="benefit-title">5% de cashback em mercados</h3>
+                </div>
+                <p class="benefit-description">Acumule 5% do valor de suas compras em mercados parceiros para usar em compras futuras.</p>
+                <div class="benefit-footer">
+                    <span class="benefit-validity">Válido até: 31/12/2025</span>
+                    <button class="use-button">
+                        <span class="material-icons">redeem</span>
+                        Usar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Seção de PIX -->
+            <div class="pix-section">
+                <div class="pix-header">
+                    <h3 class="pix-title">
+                        <span class="material-icons">payments</span>
+                        Pontos para PIX
+                    </h3>
+                    <span class="pix-value">R$ 35,00 disponíveis</span>
+                </div>
+                <p class="benefit-description">Converta seus pontos em PIX e receba o valor diretamente na sua conta.</p>
+                
+                <div class="pix-options">
+                    <div class="pix-button">
+                        <span class="material-icons">add_circle</span>
+                        <span class="pix-button-text">Cadastrar Chave PIX</span>
+                    </div>
+                    <div class="pix-button">
+                        <span class="material-icons">swap_horiz</span>
+                        <span class="pix-button-text">Converter Pontos</span>
+                    </div>
+                    <div class="pix-button">
+                        <span class="material-icons">history</span>
+                        <span class="pix-button-text">Histórico</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-header">
+                    <div class="benefit-icon">
+                        <span class="material-icons" style="color: #1E88E5;">local_pharmacy</span>
+                    </div>
+                    <h3 class="benefit-title">Frete grátis em farmácias</h3>
+                </div>
+                <p class="benefit-description">Entrega gratuita em pedidos acima de R$ 50,00 nas farmácias participantes.</p>
+                <div class="benefit-footer">
+                    <span class="benefit-validity">Válido até: 31/12/2025</span>
+                    <button class="use-button">
+                        <span class="material-icons">redeem</span>
+                        Usar
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <span class="material-icons">home</span>
+                <p>Início</p>
+            </div>
+            <div class="nav-item">
+                <span class="material-icons">directions_car</span>
+                <p>Transporte</p>
+            </div>
+            <div class="nav-item">
+                <span class="material-icons">shopping_cart</span>
+                <p>Marketplace</p>
+            </div>
+            <div class="nav-item active">
+                <span class="material-icons">card_giftcard</span>
+                <p>Benefícios</p>
+            </div>
+            <div class="nav-item">
+                <span class="material-icons">person</span>
+                <p>Perfil</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
